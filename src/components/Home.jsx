@@ -38,14 +38,16 @@ export function Home() {
 
     const genreList = genres.map((item, index) => {
         return(
-            <li className='list-inline-item' ke={index}>
-                <button type='button' className='btn btn-outline-info'>
+            <li className='list-inline-item' key={index}>
+                <button type='button' className='btn' style={{ color: 'tomato' }}>
                     {item.name}
                 </button>
             </li>
         )
     })
     return(
+        <div>
+            <h1 className='logo'> PixtureBox </h1>
         <div className="container">
             <div className='row mt-2'>
                 <div className='col'>
@@ -59,15 +61,15 @@ export function Home() {
                             {movies}
                     </RBCarousel>
                 </div>
-
                 <div className='row mt-4'>
                     <div className='col'>
-                        <ul className='list-inline'>
+                        <ul className='list'>
                             {genreList}
                         </ul>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
