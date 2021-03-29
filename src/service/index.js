@@ -34,42 +34,54 @@ export const fetchMovies = async () => {
     } catch (error) { }
 }
 
-export const fetchGenre = () => {
-
+export const fetchGenre = async () => {
+    try {
+        const { data } = await axios.get(genreUrl, {
+            params: {
+                api_key: apiKey,
+                language: 'en_US',
+                page: 1
+            }
+        })
+        const modifiedData = data['genres'].map((g) => ({
+            id: g['id'],
+            name: g['name']
+        }))
+        return modifiedData;
+    } catch (error) { }
 }
+// export const fetchMovieBoyGenre = () => {
 
-export const fetchMovieBoyGenre = () => {
+// }
 
-}
-
-export const fetchPersons = () => {
+// export const fetchPersons = () => {
     
-}
+// }
 
-export const fetchTopratedMovie = () => {
+// export const fetchTopratedMovie = () => {
 
-}
+// }
 
-export const fetchMovieDetail = () => {
+// export const fetchMovieDetail = () => {
     
-}
+// }
 
-export const fetchMovieVideos = () => {
+// export const fetchMovieVideos = () => {
 
-}
+// }
 
-export const fetchCasts = () => {
+// export const fetchCasts = () => {
     
-}
+// }
 
-export const fetchMovieVideos = () => {
+// export const fetchMovieVideos = () => {
 
-}
+// }
 
-export const fetchCasts = () => {
+// export const fetchCasts = () => {
     
-}
+// }
 
-export const fetchSimilarMovie = () => {
+// export const fetchSimilarMovie = () => {
     
-}
+// }
