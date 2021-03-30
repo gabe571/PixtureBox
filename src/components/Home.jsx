@@ -1,5 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import RBCarousel from 'react-bootstrap-carousel';
+import ReactStars from 'react-rating-stars-component'
 import { fetchMovies, fetchGenre, fetchMovieByGenre } from "../service";
 import { Link } from 'react-router-dom';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
@@ -56,6 +57,14 @@ export function Home() {
                 <Link to={`/movie/${item.id}`}>
                     <img className='img-fluid' src={item.poster} alt={item.title}></img>
                 </Link>
+                <div className='mt-3'>
+                <p> Rated: {item.rating} </p>
+                <ReactStars 
+                count={item.rating} 
+                size={20} 
+                color={`#f4c10f`}>
+                </ReactStars>
+                </div>
             </div>    
         </div>
         )
