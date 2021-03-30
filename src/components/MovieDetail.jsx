@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import { fetchMovieDetail, fetchMovieVideos } from '../service'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import { Modal } from 'react-bootstrap';
+import ReactStars from 'react-rating-stars-component';
 
 export function MovieDetail({ match }) {
 
@@ -97,10 +98,49 @@ export function MovieDetail({ match }) {
         </div>
         <div className='row mt-3'>
             <ul className='list-inline'>
-                {genres && genresList}
+                {genresList}
             </ul>
-        </div>  
+        </div> 
+        <div className='row-mt-3'>
+            <div className='col'>
+                <div className='text-center'>
+                    <ReactStars
+                    count={detail.vote_average}
+                    size={20}
+                    color={`#f4c10f`}
+                    ></ReactStars>
+                </div>
+        <div className='mt-3'>
+            <p> OVERVIEW </p>
+                {detail.overview}
+                </div>
+                <div className='row mt-3'>
+                    <div className='col'>
+                    <p> RELEASE DATE </p>
+                    {detail.release_date}
+                </div>
+            </div>
+            <div className='row mt-3'>
+                    <div className='col'>
+                    <p> RUN TIME </p>
+                    {detail.runtime} MINS
+                </div>
+            </div>
+            <div className='row mt-3'>
+                    <div className='col'>
+                    <p> BUDGET </p>
+                    {detail.budget}
+                </div>
+            </div>
+            <div className='row mt-3'>
+                    <div className='col'>
+                    <p> HOMEPAGE </p>
+                    {detail.title}
+                </div>
+            </div>
         </div>
+        </div> 
+     </div>
     </div>
     );
 }
