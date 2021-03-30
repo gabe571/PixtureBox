@@ -7,6 +7,7 @@ import { Modal } from 'react-bootstrap';
 export function MovieDetail({ match }) {
 
     let params = match.params;
+    let genres = []; 
     const [isOpen, setIsOpen] = useState(false);
     const [detail, setDetail] = useState([]);
     const [video, setVideo] = useState([]);
@@ -18,6 +19,7 @@ export function MovieDetail({ match }) {
         };
             fetchAPI();
         }, [params.id]);
+        genres = detail.genres;
 
     const MoviePlayerModal = (props) => {
         const youtubeUrl = 'https://www.youtube.com/watch?v=';
@@ -33,7 +35,7 @@ export function MovieDetail({ match }) {
                 id='container-modal-title-vcenter'
                 style={{ color: 'black', fontWeight: 'bolder' }}
                 >
-                    {detail.title}
+                {detail.title}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body style={{backgroundColor: 'black' }}>
@@ -42,14 +44,30 @@ export function MovieDetail({ match }) {
                 url={youtubeUrl + video.key} 
                 playing
                 width='100%'
-                ></ReactPlayer>
+                >
+                </ReactPlayer>
             </Modal.Body>
             </Modal>
         );
     };
+
+    let genresList;
+  if (genres) {
+    genresList = genres.map((g, i) => {
+      return (
+        <li className="list-inline-item"  key={i}>
+          <button type="button" className="btn btn-outline-info" className='btn' style={{ color: 'tomato' }}>
+            {g.name}
+          </button>
+        </li>
+      );
+    });
+  }
+
     return (
     <div>
         <h1 className='logo'> PixtureBox </h1>
+    <div className='container'>
         <MoviePlayerModal
         show={isOpen}
         onHide={() => {
@@ -57,7 +75,7 @@ export function MovieDetail({ match }) {
         }}
         >
         </MoviePlayerModal>
-            <div className="col text-center" style={{ width: "90%" }}>
+            <div className="col text-center" style={{ width: "100%" }}>
              <img
             className="img-fluid"
             src={`http://image.tmdb.org/t/p/original/${detail.backdrop_path}`}
@@ -71,6 +89,17 @@ export function MovieDetail({ match }) {
           <div className='carousel-caption'
           style={{ textAlign:'center', fontSize: 50, fontWeight: 'bold', color: 'tomato'}}>
                {detail.title}</div>
+        </div>
+        <div className='row mt-3'>
+            <div classname='col'>
+                <p style={{ color: 'white'}}> GENRE </p>
+            </div>
+        </div>
+        <div className='row mt-3'>
+            <ul className='list-inline'>
+                {genres && genresList}
+            </ul>
+        </div>  
         </div>
     </div>
     );
