@@ -140,18 +140,43 @@ export const fetchMovieVideos = async (id) => {
     } catch (error) { }
 }
 
-// export const fetchCasts = () => {
-    
-// }
+export const fetchCasts = async (id) => {
+    try {
+        const { data } = await axios.get(`${movieUrl}/${id}/credits`, {
+            params: {
+                api_key: apiKey,
+            }
+        });
+        const modifiedData = data['cast'].map((c) => ({
+            id: c['cast_id'],
+            character: c['character'],
+            name: c['name'],
+            img: 'https://image.tmdb.org/t/p/w200' + c['profile_path'],
+        }))
 
-// export const fetchMovieVideos = () => {
+        return modifiedData;
+    } catch (error) { }
+}
 
-// }
+export const fetchSimilarMovie = async (id) => {
+    try {
+        const { data } = await axios.get(`${movieUrl}/${id}/similar`, {
+            params: {
+                api_key: apiKey,
+                language: 'en_US'
+            }
+        });
+        const posterUrl = 'https://image.tmdb.org/t/p/original/';
+        const modifiedData = data['results'].map((m) => ({
+            id: m['id'],
+            backPoster: posterUrl + m['backdrop_path'],
+            popularity: m['popularith'],
+            title: m['title'],
+            poster: posterUrl + m['poster_path'],
+            overview: m['overview'],
+            rating: m['vote_average'],
+        }))
 
-// export const fetchCasts = () => {
-    
-// }
-
-// export const fetchSimilarMovie = () => {
-    
-// }
+        return modifiedData;
+    } catch (error) { }
+}
