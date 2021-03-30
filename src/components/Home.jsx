@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import RBCarousel from 'react-bootstrap-carousel';
 import ReactStars from 'react-rating-stars-component'
-import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons } from "../service";
+import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchTopratedMovie } from "../service";
 import { Link } from 'react-router-dom';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
@@ -10,6 +10,7 @@ export function Home() {
     const [genres, setGenres] = useState([]);
     const [movieByGenre, setMovieByGenre] = useState([]);
     const [persons, setPersons] = useState([]);
+    const [topRated, setTopRated] = useState([]);
 
     useEffect(() => {
         const fetchAPI = async () => {
@@ -17,11 +18,15 @@ export function Home() {
             setGenres(await fetchGenre());
             setMovieByGenre(await fetchMovieByGenre(28));
             setPersons(await fetchPersons());
+            setTopRated(await fetchTopratedMovie()); 
         };
         fetchAPI();
     },[]);
 
-    const movies = nowPlaying.slice(0, 5).map((item, index) => {
+    const handleGenre = async (genre_id) => {
+        setMovieByGenre(await fetchMovieByGenre(genre_id));
+    }
+    const movies = nowPlaying.slice(0, 6).map((item, index) => {
         return (
             <div style={{ height: 500, width: '100%' }}key={index}>
                 <div className='carousel-center'>
@@ -45,7 +50,9 @@ export function Home() {
     const genreList = genres.map((item, index) => {
         return(
             <li className='list-inline-item' key={index}>
-                <button type='button' className='btn' style={{ color: 'tomato' }}>
+                <button type='button' className='btn' style={{ color: 'tomato' }} onClick={(e) =>{
+                    handleGenre(item.id)
+                }}>
                     {item.name}
                 </button>
             </li>
@@ -86,6 +93,26 @@ export function Home() {
         );
       });
     
+      const topRatedList = topRated.slice(0,4).map(( item, index) => {
+          return (
+              <div className='col-md-3' key={index}>
+                  <div className='card'>
+                      <Link to={`/movie/${item.id}`}>
+                          <img className='img-fluid' src={item.poster} alt={item.title}>
+                          </img>
+                      </Link>
+                  </div>
+                  <div className='mt-3'>
+                <p> Rated: {item.rating} </p>
+                <ReactStars 
+                count={item.rating} 
+                size={20} 
+                color={`#f4c10f`}>
+                </ReactStars>
+                </div>
+              </div>
+          )
+      })
     return (
         <div>
             <h1 className='logo'> PixtureBox </h1>
@@ -109,15 +136,23 @@ export function Home() {
                         </ul>
                     </div>
                 </div>
+
+            <div className="col">
+                <div className="float-right">
+                    <i className="far fa-arrow-alt-circle-right"></i>
+                </div>
+            </div>
+
                 <div className='row mt-3'>{movieList}</div>
                 <div className='row mt-3'>
                     <div className='col'>
-                        <p className='font-weight-bold' style={{ color: '5a606b' }}>
+                        <p className='font-weight-bold' style={{ color: 'WHITE' }}>
                             WHOS TRENDING
                         </p>
                     </div>
                 </div>
             </div>
+
             <div className="row mt-3">
         <div className="col">
           <div className="float-right">
@@ -125,7 +160,24 @@ export function Home() {
           </div>
         </div>
       </div>
+
             <div className='row mt-3'>{trendingPersons}</div>
+            
+            <div className="row mt-3">
+        <div className="col">
+          <div className="float-right">
+            <i className="far fa-arrow-alt-circle-right"></i>
+          </div>
+        </div>
+      </div>
+            <div className='row mt-3'>
+                <div className='col'>
+                    <p className='font-weight-bold' style={{ color: 'WHITE' }}>
+                        TOP RATED MOVIES
+                    </p>
+                </div>
+            </div>
+            <div className='row mt-3'>{topRatedList}</div>
         </div>
     </div>
     )
