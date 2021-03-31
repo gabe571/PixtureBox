@@ -4,7 +4,7 @@ import { fetchMovieDetail, fetchMovieVideos, fetchCasts, fetchSimilarMovie } fro
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import { Modal } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export function MovieDetail({ match }) {
 
@@ -104,7 +104,7 @@ export function MovieDetail({ match }) {
           <ReactStars
             count={item.rating}
             size={20}
-            color1={"#f4c10f"}
+            color={`#f4c10f`}
           ></ReactStars>
         </div>
       </div>
@@ -113,8 +113,8 @@ export function MovieDetail({ match }) {
 
     return (
     <div>
-        <h1 className='logo'> PixtureBox </h1>
-    <div className='container'>
+        <NavLink className='logo' to='/' exact> PIXTUREBOX</NavLink>
+            <div className='container'>
         <MoviePlayerModal
         show={isOpen}
         onHide={() => {
@@ -137,15 +137,17 @@ export function MovieDetail({ match }) {
           style={{ textAlign:'center', fontSize: 50, fontWeight: 'bold', color: 'tomato'}}>
                {detail.title}</div>
         </div>
-        <div className='row mt-3'>
+        {/* <div className='container'>
             <div classname='col'>
                 <p style={{ color: 'white'}}> GENRE </p>
-            </div>
-        </div>
+            </div> */}
+        {/* </div> */}
         <div className='row mt-3'>
+            <div className="col">
             <ul className='list-inline'>
                 {genresList}
             </ul>
+        </div>
         </div> 
         <div className='row-mt-3'>
             <div className='col'>
@@ -157,31 +159,31 @@ export function MovieDetail({ match }) {
                     ></ReactStars>
                 </div>
         <div className='mt-3'>
-            <p> OVERVIEW </p>
-                {detail.overview}
+            <h1> OVERVIEW </h1>
+            <p style={{ color: "#f4c10f", fontSize: 20}}>{detail.overview}</p>
                 </div>
                 <div className='row mt-3'>
                     <div className='col'>
-                    <p> RELEASE DATE </p>
-                    {detail.release_date}
+                    <h1> RELEASE DATE </h1>
+                    <p style={{ color: "#f4c10f", fontSize: 20 }}>{detail.release_date}</p>
                 </div>
             </div>
             <div className='row mt-3'>
                     <div className='col'>
-                    <p> RUN TIME </p>
-                    {detail.runtime} MINS
+                    <h1> RUN TIME </h1>
+                    <p style={{ color: "#f4c10f", fontSize: 20 }}>{detail.runtime} MINS</p>
                 </div>
             </div>
             <div className='row mt-3'>
                     <div className='col'>
-                    <p> BUDGET </p>
-                    {detail.budget}
+                    <h1> BUDGET </h1>
+                    <p style={{ color: "#f4c10f", fontSize: 20 }}>{detail.budget}</p>
                 </div>
             </div>
             <div className='row mt-3'>
                     <div className='col'>
-                    <p> HOMEPAGE </p>
-                    {detail.homepage}
+                    <h1> HOMEPAGE </h1>
+                    <a  style={{ color: "#f4c10f", fontSize: 20 }} href={detail.homepage} target="_blank">{detail.homepage}</a>
                 </div>
             </div>
             <div className="row mt-3">
@@ -194,7 +196,7 @@ export function MovieDetail({ match }) {
       <div className="row mt-3">
         <div className="col">
           <p style={{ color: "white", fontWeight: "bolder" }}>
-            SIMILAR MOVIES
+            SIMILAR TITLES 
           </p>
         </div>
       </div>

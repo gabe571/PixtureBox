@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from 'react';
 import RBCarousel from 'react-bootstrap-carousel';
 import ReactStars from 'react-rating-stars-component'
 import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchTopratedMovie } from "../service";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
 export function Home() {
@@ -23,6 +23,7 @@ export function Home() {
         fetchAPI();
     },[]);
 
+    
     const handleGenre = async (genre_id) => {
         setMovieByGenre(await fetchMovieByGenre(genre_id));
     }
@@ -33,10 +34,6 @@ export function Home() {
                     <img style={{ height: 600 }} src={item.backPoster} alt={item.title} />
                 </div>
                 <div className='carousel-center'>
-                    <i 
-                    className='far fa-play-circle' 
-                    style={{ fontSize: 100, color: 'orange'}}
-                    ></i>
                 </div>
                 <div 
                 className='carousel-caption'
@@ -115,7 +112,10 @@ export function Home() {
       })
     return (
         <div>
-            <h1 className='logo'> PixtureBox </h1>
+        <NavLink to='/' exact className='logo'> PIXTUREBOX</NavLink>
+        <div className='container'>
+        </div>
+        <div>
         <div className="container">
             <div className='row mt-2'>
                 <div className='col'>
@@ -179,6 +179,7 @@ export function Home() {
             </div>
             <div className='row mt-3'>{topRatedList}</div>
         </div>
+    </div>
     </div>
     )
 }
