@@ -10,14 +10,24 @@
   color: tomato;
   text-decoration: none;
 }
-a:visited {
+
+
+a:link, a:visited {
   color: tomato;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .fa-arrow-alt-circle-right {
   color: orange;
   font-size: 50px;
   cursor: pointer;
+}
+.fa-play-circle:hover {
+  color: white;
+  transition: all 0.3 ease-in-out;
 }
 
 .fa-arrow-alt-circle-right:hover {

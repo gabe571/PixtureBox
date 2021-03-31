@@ -70,7 +70,7 @@ export function MovieDetail({ match }) {
     });
   }
 
-  const castList = casts.slice(0, 4).map((c, i) => {
+  const castList = casts.slice(0, 12).map((c, i) => {
     return (
       <div className="col-md-3 text-center" key={i}>
         <img
@@ -110,7 +110,7 @@ export function MovieDetail({ match }) {
       </div>
     );
   });
-
+  console.log(casts)
     return (
     <div>
         <NavLink className='logo' to='/' exact> PIXTUREBOX</NavLink>
@@ -183,12 +183,12 @@ export function MovieDetail({ match }) {
             <div className='row mt-3'>
                     <div className='col'>
                     <h1> HOMEPAGE </h1>
-                    <a  style={{ color: "#f4c10f", fontSize: 20 }} href={detail.homepage} target="_blank">{detail.homepage}</a>
+                    <a style={{ color: "#f4c10f", fontSize: 20 }} href={detail.homepage} target="_blank">{detail.homepage}</a>
                 </div>
             </div>
             <div className="row mt-3">
         <div className="col">
-          <p style={{ color: "white", fontWeight: "bolder" }}>CASTS</p>
+          <h1 style={{ color: "white" }}>CAST</h1>
         </div>
       </div>
       <div className="row mt-3">{castList}</div>
