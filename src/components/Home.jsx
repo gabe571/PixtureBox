@@ -137,37 +137,37 @@ export function Home() {
                     </div>
                 </div>
 
-            <div className="col">
+            {/* <div className="col">
                 <div className="float-right">
                     <i className="far fa-arrow-alt-circle-right"></i>
                 </div>
-            </div>
+            </div> */}
 
                 <div className='row mt-3'>{movieList}</div>
-                <div className='row mt-3'>
+                {/* <div className='row mt-3'>
                     <div className='col'>
                         <p className='font-weight-bold' style={{ color: 'WHITE' }}>
                             WHOS TRENDING
                         </p>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className="row mt-3">
-        <div className="col">
+        {/* <div className="col">
           <div className="float-right">
             <i className="far fa-arrow-alt-circle-right"></i>
           </div>
-        </div>
+        </div> */}
       </div>
 
-            <div className='row mt-3'>{trendingPersons}</div>
+            {/* <div className='row mt-3'>{trendingPersons}</div> */}
             
             <div className="row mt-3">
         <div className="col">
-          <div className="float-right">
+          {/* <div className="float-right">
             <i className="far fa-arrow-alt-circle-right"></i>
-          </div>
+          </div> */}
         </div>
       </div>
             <div className='row mt-3'>
