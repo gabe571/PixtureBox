@@ -11,14 +11,25 @@
   text-decoration: none;
 }
 
-
-a:link, a:visited {
+.Nav_link:link {
   color: tomato;
-  padding: 14px 25px;
-  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
   text-decoration: none;
-  display: inline-block;
 }
+.Nav_link:visited {
+  color: tomato;
+  text-decoration: none;
+}
+.Nav_link:hover {
+  color: tomato;
+  text-decoration: none;
+}
+.Nav_link:active {
+  color: tomato;
+  text-decoration: none;
+}
+
 
 .fa-arrow-alt-circle-right {
   color: orange;

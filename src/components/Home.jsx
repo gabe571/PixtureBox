@@ -112,7 +112,7 @@ export function Home() {
       })
     return (
         <div>
-        <NavLink to='/' exact className='logo'> PIXTUREBOX</NavLink>
+        <NavLink to='/' className='Nav_link' activeStyle={{ color: 'tomato' }}> PIXTUREBOX</NavLink>
         <div className='container'>
         </div>
         <div>

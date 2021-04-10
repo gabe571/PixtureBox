@@ -113,7 +113,7 @@ export function MovieDetail({ match }) {
   console.log(casts)
     return (
     <div>
-        <NavLink className='logo' to='/' exact> PIXTUREBOX</NavLink>
+        <NavLink className='Nav_link' activeStyle={{ color: 'tomato' }} to='/' exact> PIXTUREBOX</NavLink>
             <div className='container'>
         <MoviePlayerModal
         show={isOpen}
