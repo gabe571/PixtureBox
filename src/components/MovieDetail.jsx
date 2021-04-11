@@ -62,9 +62,9 @@ export function MovieDetail({ match }) {
     genresList = genres.map((g, i) => {
       return (
         <li className="list-inline-item"  key={i}>
-          <button type="button" className="btn btn-outline-info" className='btn' style={{ color: 'tomato' }}>
-            {g.name}
-          </button>
+          <li  style={{ color: 'tomato' }}>
+            {g.name} |
+          </li>
         </li>
       );
     });
