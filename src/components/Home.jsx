@@ -65,11 +65,11 @@ export function Home() {
                 </Link>
                 <div className='mt-3'>
                 <p> Rated: {item.rating} </p>
-                <ReactStars 
+                {/* <ReactStars 
                 count={item.rating} 
                 size={20} 
                 color={`#f4c10f`}>
-                </ReactStars>
+                </ReactStars> */}
                 </div>
             </div>    
         </div>
@@ -101,11 +101,11 @@ export function Home() {
                   </div>
                   <div className='mt-3'>
                 <p> Rated: {item.rating} </p>
-                <ReactStars 
+                {/* <ReactStars 
                 count={item.rating} 
                 size={20} 
                 color={`#f4c10f`}>
-                </ReactStars>
+                </ReactStars> */}
                 </div>
               </div>
           )

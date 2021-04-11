@@ -149,8 +149,8 @@ export function MovieDetail({ match }) {
             </ul>
         </div>
         </div> 
-        <div className='row-mt-3'>
-            <div className='col'>
+        <div className='mt-3'>
+        <h1> AVERAGE VIEWER RATING </h1>
                 <div className='text-center'>
                     <ReactStars
                     count={detail.vote_average}
@@ -205,6 +205,5 @@ export function MovieDetail({ match }) {
         </div>
         </div> 
      </div>
-    </div>
     );
 }
