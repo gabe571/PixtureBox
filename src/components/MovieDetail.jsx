@@ -101,11 +101,11 @@ export function MovieDetail({ match }) {
         <div className="mt-3">
           <p style={{ fontWeight: "bolder" }}>{item.title}</p>
           <p>Rated: {item.rating}</p>
-          <ReactStars
+          {/* <ReactStars
             count={item.rating}
             size={20}
             color={`#f4c10f`}
-          ></ReactStars>
+          ></ReactStars> */}
         </div>
       </div>
     );
@@ -113,7 +113,7 @@ export function MovieDetail({ match }) {
   console.log(casts)
     return (
     <div>
-        <NavLink className='Nav_link' activeStyle={{ color: 'tomato' }} to='/' exact> PIXTUREBOX</NavLink>
+        <NavLink className='Nav_link' activeStyle={{ color: 'tomato' }} to='/' exact><h1> PixtureBox</h1></NavLink>
             <div className='container'>
         <MoviePlayerModal
         show={isOpen}
