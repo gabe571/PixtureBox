@@ -27,7 +27,7 @@ export function MovieDetail({ match }) {
             fetchAPI();
         }, [params.id]);
         genres = detail.genres;
-
+console.log(detail)
     const MoviePlayerModal = (props) => {
         const youtubeUrl = 'https://www.youtube.com/watch?v=';
         return (
@@ -133,14 +133,15 @@ export function MovieDetail({ match }) {
           style={{ textAlign:'center', fontSize: 50, fontWeight: 'bold', color: 'tomato'}}>
                {detail.title}</div>
         </div>
-        <div className='row mt-3'>
+        <div className='row mt-3 container'>
             <div className="col">
             <ul className='list-inline'>
                 {genresList}
             </ul>
         </div>
         </div> 
-        <div className='mt-3'>
+        {/* <p style={{ color: "#f4c10f", fontSize: 20 }}>{detail.production_companies[0].name}</p> */}
+        <div className='mt-3 container'>
         <h1> AVERAGE VIEWER RATING </h1>
                 <div className='text-center'>
                     <ReactStars
@@ -191,10 +192,9 @@ export function MovieDetail({ match }) {
           </p>
         </div>
       </div>
-
       <div className="row mt-3">{similarMovieList}</div>
         </div>
-        </div> 
+       </div>
      </div>
     );
 }
