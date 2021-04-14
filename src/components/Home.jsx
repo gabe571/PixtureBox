@@ -5,28 +5,29 @@ import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchToprated
 import { Link, NavLink } from 'react-router-dom';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
+//useState for setting up now whats nowPlaying, see all genres, see movies by genre, see perssons in movie, top rated movies regardless of genre
 export function Home() {
     const [nowPlaying, setNowPlaying] = useState([]);
     const [genres, setGenres] = useState([]);
     const [movieByGenre, setMovieByGenre] = useState([]);
     const [persons, setPersons] = useState([]);
     const [topRated, setTopRated] = useState([]);
-
+//useEffect axios calls for nowPlaying, Genres, MovieByGenre, Person, TopRated
     useEffect(() => {
         const fetchAPI = async () => {
             setNowPlaying(await fetchMovies());
             setGenres(await fetchGenre());
-            setMovieByGenre(await fetchMovieByGenre(28));
+            setMovieByGenre(await fetchMovieByGenre());
             setPersons(await fetchPersons());
             setTopRated(await fetchTopratedMovie()); 
         };
         fetchAPI();
     },[]);
-  
+//fucntion handle for onClick to retrieve genre when clicked
     const handleGenre = async (genre_id) => {
         setMovieByGenre(await fetchMovieByGenre(genre_id));
     }
-
+//carousel sliding through the most recent movies
     const movies = nowPlaying.slice(0, 6).map((item, index) => {
         return (
             <div style={{ height: 500, width: '100%' }}key={index}>
@@ -43,7 +44,7 @@ export function Home() {
             </div>
         );
     });
-
+//showing all genres under carousel, these genres are clickable which bring you to the other titles that are associated with that genre
     const genreList = genres.map((item, index) => {
         return(
             <li className='list-inline-item' key={index}>
@@ -55,7 +56,7 @@ export function Home() {
             </li>
         );
     });
-
+//shows the movies under that genre after you click on a specific genre
     const movieList = movieByGenre.map((item, index) => {
         return (
             <div className='col-md-3 col-sm-6' key={index}>
@@ -71,23 +72,21 @@ export function Home() {
         );
     });
 
-   
 
-
-
-    const trendingPersons = persons.slice(0, 4).map((p, i) => {
-        return (
-          <div className="col-md-3 text-center" key={i}>
-            <img
-              className="img-fluid rounded-circle mx-auto d-block"
-              src={p.profileImg}
-              alt={p.name}
-            ></img>
-            <p className="font-weight-bold text-center">{p.name}</p>
-          </div>
-        );
-      });
+    // const trendingPersons = persons.slice(0, 4).map((p, i) => {
+    //     return (
+    //       <div className="col-md-3 text-center" key={i}>
+    //         <img
+    //           className="img-fluid rounded-circle mx-auto d-block"
+    //           src={p.profileImg}
+    //           alt={p.name}
+    //         ></img>
+    //         <p className="font-weight-bold text-center">{p.name}</p>
+    //       </div>
+    //     );
+    //   });
     
+    //shows the top rated movies 
       const topRatedList = topRated.slice(0,4).map(( item, index) => {
           return (
               <div className='col-md-3' key={index}>
