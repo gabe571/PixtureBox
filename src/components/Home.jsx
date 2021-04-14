@@ -22,11 +22,11 @@ export function Home() {
         };
         fetchAPI();
     },[]);
-
-    
+  
     const handleGenre = async (genre_id) => {
         setMovieByGenre(await fetchMovieByGenre(genre_id));
     }
+
     const movies = nowPlaying.slice(0, 6).map((item, index) => {
         return (
             <div style={{ height: 500, width: '100%' }}key={index}>
@@ -56,7 +56,7 @@ export function Home() {
         );
     });
 
-    const movieList = movieByGenre.slice(0, 8).map((item, index) => {
+    const movieList = movieByGenre.map((item, index) => {
         return (
             <div className='col-md-3 col-sm-6' key={index}>
                 <div className='card>'>
@@ -64,17 +64,15 @@ export function Home() {
                     <img className='img-fluid' src={item.poster} alt={item.title}></img>
                 </Link>
                 <div className='mt-3'>
-                <p> Rated: {item.rating} </p>
-                {/* <ReactStars 
-                count={item.rating} 
-                size={20} 
-                color={`#f4c10f`}>
-                </ReactStars> */}
+                <h5> Rated: {item.rating}  </h5>
                 </div>
             </div>    
         </div>
         );
     });
+
+   
+
 
 
     const trendingPersons = persons.slice(0, 4).map((p, i) => {
@@ -100,12 +98,7 @@ export function Home() {
                       </Link>
                   </div>
                   <div className='mt-3'>
-                <p> Rated: {item.rating} </p>
-                {/* <ReactStars 
-                count={item.rating} 
-                size={20} 
-                color={`#f4c10f`}>
-                </ReactStars> */}
+                <p> Rated: {item.rating}  </p>
                 </div>
               </div>
           )
@@ -136,39 +129,15 @@ export function Home() {
                         </ul>
                     </div>
                 </div>
-
-            {/* <div className="col">
-                <div className="float-right">
-                    <i className="far fa-arrow-alt-circle-right"></i>
-                </div>
-            </div> */}
-
                 <div className='row mt-3'>{movieList}</div>
-                {/* <div className='row mt-3'>
-                    <div className='col'>
-                        <p className='font-weight-bold' style={{ color: 'WHITE' }}>
-                            WHOS TRENDING
-                        </p>
-                    </div>
-                </div> */}
             </div>
 
             <div className="row mt-3">
-        {/* <div className="col">
-          <div className="float-right">
-            <i className="far fa-arrow-alt-circle-right"></i>
-          </div>
-        </div> */}
       </div>
 
             {/* <div className='row mt-3'>{trendingPersons}</div> */}
             
             <div className="row mt-3">
-        <div className="col">
-          {/* <div className="float-right">
-            <i className="far fa-arrow-alt-circle-right"></i>
-          </div> */}
-        </div>
       </div>
             <div className='row mt-3'>
                 <div className='col'>
