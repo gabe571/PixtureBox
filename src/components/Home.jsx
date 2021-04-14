@@ -5,7 +5,7 @@ import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchToprated
 import { Link, NavLink } from 'react-router-dom';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
-//useState for setting up now whats nowPlaying, see all genres, see movies by genre, see perssons in movie, top rated movies regardless of genre
+//useState for setting up now whats nowPlaying, see all genres, see movies by genre, see trending persons, top rated movies regardless of genre
 export function Home() {
     const [nowPlaying, setNowPlaying] = useState([]);
     const [genres, setGenres] = useState([]);

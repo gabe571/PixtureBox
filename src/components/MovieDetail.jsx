@@ -16,6 +16,7 @@ export function MovieDetail({ match }) {
     const [casts, setCasts] = useState([]);
     const [similarMovie, setSimliarMovie] = useState([]);
 
+
     useEffect(() => {
         const fetchAPI = async () => {
             setDetail(await fetchMovieDetail(params.id));
@@ -101,16 +102,11 @@ export function MovieDetail({ match }) {
         <div className="mt-3">
           <p style={{ fontWeight: "bolder" }}>{item.title}</p>
           <p>Rated: {item.rating}</p>
-          {/* <ReactStars
-            count={item.rating}
-            size={20}
-            color={`#f4c10f`}
-          ></ReactStars> */}
         </div>
       </div>
     );
   });
-  console.log(casts)
+
     return (
     <div>
         <NavLink className='Nav_link' activeStyle={{ color: 'tomato' }} to='/' exact><h1> PixtureBox</h1></NavLink>
@@ -137,11 +133,6 @@ export function MovieDetail({ match }) {
           style={{ textAlign:'center', fontSize: 50, fontWeight: 'bold', color: 'tomato'}}>
                {detail.title}</div>
         </div>
-        {/* <div className='container'>
-            <div classname='col'>
-                <p style={{ color: 'white'}}> GENRE </p>
-            </div> */}
-        {/* </div> */}
         <div className='row mt-3'>
             <div className="col">
             <ul className='list-inline'>
