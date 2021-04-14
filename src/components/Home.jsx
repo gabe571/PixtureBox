@@ -32,7 +32,9 @@ export function Home() {
         return (
             <div style={{ height: 500, width: '100%' }}key={index}>
                 <div className='carousel-center'>
-                    <img style={{ height: 600 }} src={item.backPoster} alt={item.title} />
+                <Link to={`/movie/${item.id}`}>
+                    <img style={{ height: 600 }} src={item.backPoster} alt={item.title}  />
+                    </Link>
                 </div>
                 <div className='carousel-center'>
                 </div>
