@@ -5,6 +5,7 @@ import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import { Modal } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
 import { Link, NavLink } from 'react-router-dom';
+import Navbar from './Navbar'
 
 //accessing movie thats being clicked on Home Page
 export function MovieDetail({ match }) {
@@ -110,8 +111,8 @@ console.log(detail)
 
     return (
     <div>
-        <NavLink className='Nav_link' activeStyle={{ color: 'tomato' }} to='/' exact><h1> PixtureBox</h1></NavLink>
-            <div className='container'>
+         <Navbar />
+        <div className='container'>
         <MoviePlayerModal
         show={isOpen}
         onHide={() => {

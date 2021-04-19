@@ -3,6 +3,7 @@ import RBCarousel from 'react-bootstrap-carousel';
 import ReactStars from 'react-rating-stars-component'
 import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchTopratedMovie } from "../service";
 import { Link, NavLink } from 'react-router-dom';
+import Navbar from './Navbar'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
 //useState for setting up now whats nowPlaying, see all genres, see movies by genre, see trending persons, top rated movies regardless of genre
@@ -106,10 +107,7 @@ export function Home() {
       })
     return (
         <div>
-        <NavLink to='/' className='Nav_link' activeStyle={{ color: 'tomato'}}><h1>PixtureBox</h1></NavLink>
-        <div className='container'>
-        </div>
-        <div>
+        <Navbar />
         <div className="container">
             <div className='row mt-2'>
                 <div className='col'>
@@ -149,7 +147,6 @@ export function Home() {
             </div>
             <div className='row mt-3'>{topRatedList}</div>
         </div>
-    </div>
     </div>
     )
 }
