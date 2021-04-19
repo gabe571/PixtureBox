@@ -6,6 +6,7 @@ import { Modal } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
 import { Link, NavLink } from 'react-router-dom';
 
+//accessing movie thats being clicked on Home Page
 export function MovieDetail({ match }) {
 
     let params = match.params;
@@ -15,8 +16,8 @@ export function MovieDetail({ match }) {
     const [video, setVideo] = useState([]);
     const [casts, setCasts] = useState([]);
     const [similarMovie, setSimliarMovie] = useState([]);
-
-
+console.log(match.params)
+//useEffect calls for detail, video, casts and similar movie
     useEffect(() => {
         const fetchAPI = async () => {
             setDetail(await fetchMovieDetail(params.id));
@@ -57,7 +58,7 @@ console.log(detail)
             </Modal>
         );
     };
-
+//returns genres associated with this movie
     let genresList;
   if (genres) {
     genresList = genres.map((g, i) => {
@@ -70,7 +71,7 @@ console.log(detail)
       );
     });
   }
-
+//returns casts for current movie being shown 
   const castList = casts.slice(0, 12).map((c, i) => {
     return (
       <div className="col-md-3 text-center" key={i}>
@@ -90,7 +91,7 @@ console.log(detail)
     );
   });
 
-
+//returns similar movies to movie currently beingh viewed
   const similarMovieList = similarMovie.slice(0, 4).map((item, index) => {
     return (
       <div className="col-md-3 col-sm-6" key={index}>
