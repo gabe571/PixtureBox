@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from "react-player";
-import { fetchMovieDetail, fetchMovieVideos, fetchCasts, fetchSimilarMovie } from '../service'
+import { fetchMovieDetail, fetchMovieVideos, fetchCasts, fetchSimilarMovie } from '../service/Axios'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import { Modal } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar'
 
 //accessing movie thats being clicked on Home Page

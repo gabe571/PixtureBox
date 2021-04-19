@@ -1,8 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import RBCarousel from 'react-bootstrap-carousel';
-import ReactStars from 'react-rating-stars-component'
-import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchTopratedMovie } from "../service";
-import { Link, NavLink } from 'react-router-dom';
+import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchTopratedMovie } from "../service/Axios";
+import { Link  } from 'react-router-dom';
 import Navbar from './Navbar'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
