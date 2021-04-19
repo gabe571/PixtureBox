@@ -9,16 +9,17 @@ const genreUrl = `${url}/genre/movie/list`;
 const moviesUrl = `${url}/discover/movie`;
 const personUrl = `${url}/trending/person/week`;
  
+//fetching now playing movies, shown on carousel at top of page
 export const fetchMovies = async () => {
     try {
         const { data } = await axios.get(nowPlayingUrl, {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 1
+                page: 2
             }
         })
-
+//returns posters, showing the title, poster, overview, rating
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
         const modifiedData = data['results'].map((m) => ({
             id: m['id'],
@@ -34,6 +35,7 @@ export const fetchMovies = async () => {
     } catch (error) { }
 }
 
+// fetches Genre list
 export const fetchGenre = async () => {
     try {
         const { data } = await axios.get(genreUrl, {
@@ -50,6 +52,8 @@ export const fetchGenre = async () => {
         return modifiedData;
     } catch (error) { }
 }
+
+//fetches movie by genre, renders them on the mage
 export const fetchMovieByGenre = async (genre_id) => {
     try {
         const { data } = await axios.get(moviesUrl, {
@@ -75,6 +79,7 @@ export const fetchMovieByGenre = async (genre_id) => {
     } catch (error) { }
 }
 
+//fetches person, known for..
 export const fetchPersons = async () => {
     try {
         const { data } = await axios.get(personUrl, {
@@ -93,7 +98,7 @@ export const fetchPersons = async () => {
     } catch (error) { }
 }
 
-
+//top rated movies returned 
 export const fetchTopratedMovie = async () => {
     try {
         const { data } = await axios.get(topratedUrl, {
@@ -117,6 +122,7 @@ export const fetchTopratedMovie = async () => {
     } catch (error) { }
 }
 
+//fetches movie details
 export const fetchMovieDetail = async (id) => {
     try {
         const { data } = await axios.get(`${movieUrl}/${id}`, {
@@ -129,6 +135,7 @@ export const fetchMovieDetail = async (id) => {
     } catch (error) { }
 }
 
+//fetches trailers for movies
 export const fetchMovieVideos = async (id) => {
     try {
         const { data } = await axios.get(`${movieUrl}/${id}/videos`, {
@@ -140,6 +147,7 @@ export const fetchMovieVideos = async (id) => {
     } catch (error) { }
 }
 
+//fetches casts for movie
 export const fetchCasts = async (id) => {
     try {
         const { data } = await axios.get(`${movieUrl}/${id}/credits`, {
@@ -158,6 +166,7 @@ export const fetchCasts = async (id) => {
     } catch (error) { }
 }
 
+//fetches similar movies to current movie being viewed
 export const fetchSimilarMovie = async (id) => {
     try {
         const { data } = await axios.get(`${movieUrl}/${id}/similar`, {
