@@ -21,14 +21,14 @@ export const fetchMovies = async () => {
         })
 //returns posters, showing the title, poster, overview, rating
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
-        const modifiedData = data['results'].map((m) => ({
-            id: m['id'],
-            backPoster: posterUrl + m['backdrop_path'],
-            popularity: m['popularith'],
-            title: m['title'],
-            poster: posterUrl + m['poster_path'],
-            overview: m['overview'],
-            rating: m['vote_average'],
+        const modifiedData = data['results'].map((movie) => ({
+            id: movie['id'],
+            backPoster: posterUrl + movie['backdrop_path'],
+            popularity: movie['popularith'],
+            title: movie['title'],
+            poster: posterUrl + movie['poster_path'],
+            overview: movie['overview'],
+            rating: movie['vote_average'],
         }))
 
         return modifiedData;
@@ -45,9 +45,9 @@ export const fetchGenre = async () => {
                 page: 1
             }
         })
-        const modifiedData = data['genres'].map((g) => ({
-            id: g['id'],
-            name: g['name']
+        const modifiedData = data['genres'].map((genre) => ({
+            id: genre['id'],
+            name: genre['name']
         }))
         return modifiedData;
     } catch (error) { }
@@ -65,14 +65,14 @@ export const fetchMovieByGenre = async (genre_id) => {
             }
         })
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
-        const modifiedData = data['results'].map((m) => ({
-            id: m['id'],
-            backPoster: posterUrl + m['backdrop_path'],
-            popularity: m['popularith'],
-            title: m['title'],
-            poster: posterUrl + m['poster_path'],
-            overview: m['overview'],
-            rating: m['vote_average'],
+        const modifiedData = data['results'].map((movie) => ({
+            id: movie['id'],
+            backPoster: posterUrl + movie['backdrop_path'],
+            popularity: movie['popularith'],
+            title: movie['title'],
+            poster: posterUrl + movie['poster_path'],
+            overview: movie['overview'],
+            rating: movie['vote_average'],
         }))
 
         return modifiedData;
@@ -87,12 +87,12 @@ export const fetchPersons = async () => {
                 api_key: apiKey
             }
         })
-        const modifiedData = data['results'].map((p) => ({
-            id: p['id'],
-            popularity: p['popularity'],
-            name: p['name'],
-            profileImg: 'https://image.tmdb.org/t/p/w200' + p['profile_path'],
-            known: p['known_for_department']
+        const modifiedData = data['results'].map((person) => ({
+            id: person['id'],
+            popularity: person['popularity'],
+            name: person['name'],
+            profileImg: 'https://image.tmdb.org/t/p/w200' + person['profile_path'],
+            known: person['known_for_department']
         }))
         return modifiedData;
     } catch (error) { }
@@ -109,14 +109,14 @@ export const fetchTopratedMovie = async () => {
             }
         })
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
-        const modifiedData = data['results'].map((m) => ({
-            id: m['id'],
-            backPoster: posterUrl + m['backdrop_path'],
-            popularity: m['popularith'],
-            title: m['title'],
-            poster: posterUrl + m['poster_path'],
-            overview: m['overview'],
-            rating: m['vote_average'],
+        const modifiedData = data['results'].map((movie) => ({
+            id: movie['id'],
+            backPoster: posterUrl + movie['backdrop_path'],
+            popularity: movie['popularith'],
+            title: movie['title'],
+            poster: posterUrl + movie['poster_path'],
+            overview: movie['overview'],
+            rating: movie['vote_average'],
         }))
         return modifiedData;
     } catch (error) { }
@@ -155,11 +155,11 @@ export const fetchCasts = async (id) => {
                 api_key: apiKey,
             }
         });
-        const modifiedData = data['cast'].map((c) => ({
-            id: c['cast_id'],
-            character: c['character'],
-            name: c['name'],
-            img: 'https://image.tmdb.org/t/p/w200' + c['profile_path'],
+        const modifiedData = data['cast'].map((cast) => ({
+            id: cast['cast_id'],
+            character: cast['character'],
+            name: cast['name'],
+            img: 'https://image.tmdb.org/t/p/w200' + cast['profile_path'],
         }))
 
         return modifiedData;
@@ -176,14 +176,14 @@ export const fetchSimilarMovie = async (id) => {
             }
         });
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
-        const modifiedData = data['results'].map((m) => ({
-            id: m['id'],
-            backPoster: posterUrl + m['backdrop_path'],
-            popularity: m['popularith'],
-            title: m['title'],
-            poster: posterUrl + m['poster_path'],
-            overview: m['overview'],
-            rating: m['vote_average'],
+        const modifiedData = data['results'].map((movie) => ({
+            id: movie['id'],
+            backPoster: posterUrl + movie['backdrop_path'],
+            popularity: movie['popularith'],
+            title: movie['title'],
+            poster: posterUrl + movie['poster_path'],
+            overview: movie['overview'],
+            rating: movie['vote_average'],
         }))
 
         return modifiedData;

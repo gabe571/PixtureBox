@@ -3,16 +3,27 @@ import RBCarousel from 'react-bootstrap-carousel';
 import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchTopratedMovie } from "../service/Axios";
 import { Link  } from 'react-router-dom';
 import Navbar from './Navbar'
+import Search from './Searchbar'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
 //useState for setting up now whats nowPlaying, see all genres, see movies by genre, see trending persons, top rated movies regardless of genre
 export function Home() {
+    const [search, setSearch] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
     const [nowPlaying, setNowPlaying] = useState([]);
     const [genres, setGenres] = useState([]);
     const [movieByGenre, setMovieByGenre] = useState([]);
     const [persons, setPersons] = useState([]);
     const [topRated, setTopRated] = useState([]);
 //useEffect axios calls for nowPlaying, Genres, MovieByGenre, Person, TopRated
+
+// useEffect(() => {
+//     const results = movie.filter(movie =>
+//       movie.toLowerCase().includes(search)
+//     );
+//     setSearchResults(results);
+//   }, [search]);
+
     useEffect(() => {
         const fetchAPI = async () => {
             setNowPlaying(await fetchMovies());
@@ -104,9 +115,23 @@ export function Home() {
               </div>
           )
       })
+
+  const handleSearch = (e) => {
+      setSearch(e.target.value);
+  };
+
     return (
         <div>
         <Navbar />
+        {/* <label className='search' htmlFor='search'> SEARCH </label>
+        <br/>
+        <input type='text'
+         className='movie-search-bar' 
+         placeholder='type movie title' 
+         value={search} 
+         onChange={handleSearch}>
+         </input> */}
+
         <div className="container">
             <div className='row mt-2'>
                 <div className='col'>
@@ -127,7 +152,7 @@ export function Home() {
                         </ul>
                     </div>
                 </div>
-                <div className='row mt-3'>{movieList}</div>
+            <div className='row mt-3'>{movieList}</div> 
             </div>
 
             <div className="row mt-3">
