@@ -3,8 +3,8 @@ import RBCarousel from 'react-bootstrap-carousel';
 import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchTopratedMovie } from "../service/Axios";
 import { Link  } from 'react-router-dom';
 import Navbar from './Navbar'
-import Search from './Searchbar'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
+import '../App.css'
 
 //useState for setting up now whats nowPlaying, see all genres, see movies by genre, see trending persons, top rated movies regardless of genre
 export function Home() {
@@ -17,12 +17,6 @@ export function Home() {
     const [topRated, setTopRated] = useState([]);
 //useEffect axios calls for nowPlaying, Genres, MovieByGenre, Person, TopRated
 
-// useEffect(() => {
-//     const results = movie.filter(movie =>
-//       movie.toLowerCase().includes(search)
-//     );
-//     setSearchResults(results);
-//   }, [search]);
 
     useEffect(() => {
         const fetchAPI = async () => {
@@ -85,20 +79,6 @@ export function Home() {
         );
     });
 
-
-    // const trendingPersons = persons.slice(0, 4).map((p, i) => {
-    //     return (
-    //       <div className="col-md-3 text-center" key={i}>
-    //         <img
-    //           className="img-fluid rounded-circle mx-auto d-block"
-    //           src={p.profileImg}
-    //           alt={p.name}
-    //         ></img>
-    //         <p className="font-weight-bold text-center">{p.name}</p>
-    //       </div>
-    //     );
-    //   });
-    
     //shows the top rated movies 
       const topRatedList = topRated.slice(0,4).map(( item, index) => {
           return (
@@ -116,22 +96,10 @@ export function Home() {
           )
       })
 
-  const handleSearch = (e) => {
-      setSearch(e.target.value);
-  };
 
     return (
         <div>
         <Navbar />
-        {/* <label className='search' htmlFor='search'> SEARCH </label>
-        <br/>
-        <input type='text'
-         className='movie-search-bar' 
-         placeholder='type movie title' 
-         value={search} 
-         onChange={handleSearch}>
-         </input> */}
-
         <div className="container">
             <div className='row mt-2'>
                 <div className='col'>
@@ -157,8 +125,6 @@ export function Home() {
 
             <div className="row mt-3">
       </div>
-
-            {/* <div className='row mt-3'>{trendingPersons}</div> */}
             
             <div className="row mt-3">
       </div>

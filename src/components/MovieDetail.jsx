@@ -7,6 +7,7 @@ import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar'
 
+
 //accessing movie thats being clicked on Home Page
 export function MovieDetail({ match }) {
 
@@ -46,7 +47,7 @@ console.log(detail)
                 >
                 {detail.title}
                 </Modal.Title>
-            </Modal.Header>
+            </Modal.Header> 
             <Modal.Body style={{backgroundColor: 'black' }}>
                 <ReactPlayer
                 className='container-fluid'
@@ -112,7 +113,7 @@ console.log(detail)
     return (
     <div>
          <Navbar />
-        <div className='container'>
+        <div className='container' style={{ width: '1200px' }}>
         <MoviePlayerModal
         show={isOpen}
         onHide={() => {
