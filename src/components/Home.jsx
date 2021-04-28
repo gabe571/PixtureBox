@@ -7,9 +7,7 @@ import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import '../App.css'
 
 //useState for setting up now whats nowPlaying, see all genres, see movies by genre, see trending persons, top rated movies regardless of genre
-export function Home() {
-    const [search, setSearch] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+export function Home() { 
     const [nowPlaying, setNowPlaying] = useState([]);
     const [genres, setGenres] = useState([]);
     const [movieByGenre, setMovieByGenre] = useState([]);
@@ -85,11 +83,10 @@ export function Home() {
               <div className='col-md-3' key={index}>
                   <div className='card'>
                       <Link to={`/movie/${item.id}`}>
-                          <img className='img-fluid' src={item.poster} alt={item.title}>
-                          </img>
-                      </Link>
-                  </div>
-                  <div className='mt-3'>
+                          <img className='img-fluid' src={item.poster} alt={item.title} />
+                    </Link>
+                </div>
+                <div className='mt-3'>
                 <p> Rated: {item.rating}  </p>
                 </div>
               </div>
@@ -122,12 +119,6 @@ export function Home() {
                 </div>
             <div className='row mt-3'>{movieList}</div> 
             </div>
-
-            <div className="row mt-3">
-      </div>
-            
-            <div className="row mt-3">
-      </div>
             <div className='row mt-3'>
                 <div className='col'>
                     <p className='font-weight-bold' style={{ color: 'WHITE' }}>
