@@ -184,7 +184,7 @@ console.log(detail)
           <h1 className='cast'>CAST</h1>
         </div>
       </div>
-      <div className="row mt-3">{castList}</div>
+      <div className="cast-row">{castList}</div>
 
       <div className="row mt-3">
         <div className="col">

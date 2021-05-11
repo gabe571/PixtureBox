@@ -10,6 +10,7 @@
 
 .cast {
     text-align: center;
+    font-size: 50px;
 }
 
 .table {
@@ -30,4 +31,10 @@
 
 .cast-character {
     text-align: center;
+}
+
+.cast-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1%;
 }
