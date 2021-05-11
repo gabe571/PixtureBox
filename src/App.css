@@ -1,3 +1,51 @@
+.list-inline-item .btn:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Nav_link:link {
+    color: tomato;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    text-decoration: none;
+  }
+  .Nav_link:visited {
+    color: tomato;
+    text-decoration: none;
+  }
+  .Nav_link:hover {
+    color: tomato;
+    text-decoration: none;
+  }
+  .Nav_link:active {
+    color: tomato;
+    text-decoration: none;
+  }
+  
+  
+  .fa-arrow-alt-circle-right {
+    color: orange;
+    font-size: 50px;
+    cursor: pointer;
+  }
+  .fa-play-circle:hover {
+    color: white;
+    transition: all 0.3 ease-in-out;
+  }
+  
+  .fa-arrow-alt-circle-right:hover {
+    color: white;
+    transition: all 0.3 ease-in-out;
+  }
+  .modal-content {
+    height: 500px;
+  }
+  .p {
+   font-size: 10px;
+  }
+
 .mdp {
     color: #f4c10f
 }
