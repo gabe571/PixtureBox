@@ -65,8 +65,8 @@ console.log(detail)
   if (genres) {
     genresList = genres.map((g, i) => {
       return (
-        <li className="list-inline-item"  key={i}>
-          <li  style={{ color: 'tomato' }}>
+        <li className='li-list' key={i}>
+          <li className='li-list'> 
             {g.name} |
           </li>
         </li>
@@ -76,16 +76,14 @@ console.log(detail)
 //returns casts for current movie being shown 
   const castList = casts.slice(0, 12).map((c, i) => {
     return (
-      <div className="col-md-3 text-center" key={i}>
+      <div key={i}>
         <img
-          className="img-fluid rounded-circle mx-auto d-block"
+          className='cast-image'
           src={c.img}
           alt={c.name}
         ></img>
-        <p className="font-weight-bold text-center">{c.name}</p>
-        <p
-          className="font-weight-light text-center"
-          style={{ color: "white" }}
+        <p className='cast-name'>{c.name}</p>
+        <p className='cast-character'
         >
           {c.character}
         </p>
@@ -183,7 +181,7 @@ console.log(detail)
             </div>
             <div className="row mt-3">
         <div className="col">
-          <h1 style={{ color: "white" }}>CAST</h1>
+          <h1 className='cast'>CAST</h1>
         </div>
       </div>
       <div className="row mt-3">{castList}</div>
