@@ -155,30 +155,30 @@ console.log(detail)
                 </div>
         <div className='mt-3'>
             <h1> OVERVIEW </h1>
-            <p style={{ color: "#f4c10f", fontSize: 20}}>{detail.overview}</p>
+            <p className='mdp'>{detail.overview}</p>
                 </div>
                 <div className='row mt-3'>
                     <div className='col'>
                     <h1> RELEASE DATE </h1>
-                    <p style={{ color: "#f4c10f", fontSize: 20 }}>{detail.release_date}</p>
+                    <p className='mdp'>{detail.release_date}</p>
                 </div>
             </div>
             <div className='row mt-3'>
                     <div className='col'>
                     <h1> RUN TIME </h1>
-                    <p style={{ color: "#f4c10f", fontSize: 20 }}>{detail.runtime} MINS</p>
+                    <p className='mdp'>{detail.runtime} MINS</p>
                 </div>
             </div>
             <div className='row mt-3'>
                     <div className='col'>
                     <h1> BUDGET </h1>
-                    <p style={{ color: "#f4c10f", fontSize: 20 }}>{detail.budget}</p>
+                    <p className='mdp'>{detail.budget}</p>
                 </div>
             </div>
             <div className='row mt-3'>
                     <div className='col'>
                     <h1> HOMEPAGE </h1>
-                    <a style={{ color: "#f4c10f", fontSize: 20 }} href={detail.homepage} target="_blank">{detail.homepage}</a>
+                    <a className='mdp'href={detail.homepage} target="_blank">{detail.homepage}</a>
                 </div>
             </div>
             <div className="row mt-3">
