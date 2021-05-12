@@ -65,11 +65,11 @@ export function Home() {
     const movieList = movieByGenre.map((item, index) => {
         return (
             <div className='mbg' key={index}>
-                <div className='card>'>
+                <div className=''>
                 <Link to={`/movie/${item.id}`}>
                     <img className='img-fluid' src={item.poster} alt={item.title}></img>
                 </Link>
-                <div className='mt-3'>
+                <div className='movie-rating'>
                 <h5> Rated: {item.rating}  </h5>
                 </div>
             </div>    

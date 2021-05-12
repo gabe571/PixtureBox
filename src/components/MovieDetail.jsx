@@ -142,7 +142,6 @@ console.log(detail)
          </div>
         </div> 
         <div className='mdc'>
-            <h1> OVERVIEW </h1>
             <p className='mdp'>{detail.overview}</p>
             </div>
                <div className='wrapper'>

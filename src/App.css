@@ -88,12 +88,14 @@
 }
 
 .mdc {
-  text-align: left;
+  margin-left: 1.5%;
 }
 
 .similar-titles {
   color: white;
   font-weight: bold;
+  font-size: 20px;
+  margin-left: 1%;
 }
 
 .trm {
@@ -101,6 +103,7 @@
   color: white;
   font-weight: bold;
   font-size: 20px;
+  margin-left: 1%
 }
 
 .genre-row {
@@ -135,6 +138,7 @@
 }
 
 .wrapper {
+  margin-left:  1.5%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 100px;
@@ -179,4 +183,8 @@
   border: none;
   color: tomato;
   background-color: transparent;
+}
+
+.movie-rating {
+  margin-top: 2%;
 }
