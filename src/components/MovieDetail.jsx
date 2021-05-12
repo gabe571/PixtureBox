@@ -94,7 +94,7 @@ console.log(detail)
 //returns similar movies to movie currently beingh viewed
   const similarMovieList = similarMovie.slice(0, 4).map((item, index) => {
     return (
-      <div className="col-md-3 col-sm-6" key={index}>
+      <div className="col-md-3 col-sm-" key={index}>
         <div className="card">
           <Link to={`/movie/${item.id}`}>
             <img className="img-fluid" src={item.poster} alt={item.title}></img>
@@ -139,42 +139,41 @@ console.log(detail)
             <ul className='list-inline'>
                 {genresList}
             </ul>
-        </div>
+         </div>
         </div> 
-        {/* <p style={{ color: "#f4c10f", fontSize: 20 }}>{detail.production_companies[0].name}</p> */}
-        <div className='mt-3 container'>
-        <h1> AVERAGE VIEWER RATING </h1>
-                <div className='text-center'>
+        <div className='mdc'>
+            <h1> OVERVIEW </h1>
+            <p className='mdp'>{detail.overview}</p>
+            </div>
+               <div className='mdc'>
+                 <h1> RATING </h1>
+                 <div className='text-center'>
                     <ReactStars
                     count={detail.vote_average}
                     size={20}
                     color={`#f4c10f`}
                     ></ReactStars>
-                </div>
-        <div className='mt-3'>
-            <h1> OVERVIEW </h1>
-            <p className='mdp'>{detail.overview}</p>
-                </div>
-                <div className='row mt-3'>
-                    <div className='col'>
+            </div>
+                <div className='mdc'>
+                    <div className='mdh'>
                     <h1> RELEASE DATE </h1>
                     <p className='mdp'>{detail.release_date}</p>
                 </div>
             </div>
-            <div className='row mt-3'>
-                    <div className='col'>
+            <div className='mdc'>
+                    <div className='mdh'>
                     <h1> RUN TIME </h1>
                     <p className='mdp'>{detail.runtime} MINS</p>
                 </div>
             </div>
-            <div className='row mt-3'>
-                    <div className='col'>
+            <div className='mdc'>
+                    <div className='mdh'>
                     <h1> BUDGET </h1>
                     <p className='mdp'>{detail.budget}</p>
                 </div>
             </div>
-            <div className='row mt-3'>
-                    <div className='col'>
+            <div className='mdc'>
+                    <div className='mdh'>
                     <h1> HOMEPAGE </h1>
                     <a className='mdp'href={detail.homepage} target="_blank">{detail.homepage}</a>
                 </div>
@@ -186,9 +185,9 @@ console.log(detail)
       </div>
       <div className="cast-row">{castList}</div>
 
-      <div className="row mt-3">
-        <div className="col">
-          <p style={{ color: "white", fontWeight: "bolder" }}>
+      <div>
+        <div>
+          <p className="similar-titles">
             SIMILAR TITLES 
           </p>
         </div>

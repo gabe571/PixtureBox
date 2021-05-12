@@ -86,3 +86,15 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 1%;
 }
+
+.mdc {
+  text-align: left;
+}
+
+.similar-titles {
+  color: white;
+  font-weight: bold;
+}
+
+
+
