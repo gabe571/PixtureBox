@@ -168,3 +168,15 @@
   grid-row-start: 2;
   grid-row-end: 2;
 }
+
+.genre-inline {
+  list-style: none;
+  display: inline;
+}
+
+.genre-btn {
+  outline: none;
+  border: none;
+  color: tomato;
+  background-color: transparent;
+}

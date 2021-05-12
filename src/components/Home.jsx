@@ -52,8 +52,8 @@ export function Home() {
 //showing all genres under carousel, these genres are clickable which bring you to the other titles that are associated with that genre
     const genreList = genres.map((item, index) => {
         return(
-            <li className='list-inline-item' key={index}>
-                <button type='button' className='btn' style={{ color: 'tomato' }} onClick={(e) =>{
+            <li className='genre-inline' key={index}>
+                <button type='button' className='genre-btn'  onClick={(e) =>{
                     handleGenre(item.id)
                 }}>
                     {item.name}
