@@ -94,7 +94,7 @@ console.log(detail)
 //returns similar movies to movie currently beingh viewed
   const similarMovieList = similarMovie.slice(0, 4).map((item, index) => {
     return (
-      <div className="col-md-3 col-sm-" key={index}>
+      <div className="sml" key={index}>
         <div className="card">
           <Link to={`/movie/${item.id}`}>
             <img className="img-fluid" src={item.poster} alt={item.title}></img>
@@ -192,7 +192,7 @@ console.log(detail)
           </p>
         </div>
       </div>
-      <div className="row mt-3">{similarMovieList}</div>
+      <div className="similar-movie">{similarMovieList}</div>
         </div>
        </div>
      </div>

@@ -115,3 +115,21 @@
 .mbg {
   padding: 10px;
 }
+
+.tr {
+  padding: 10px;
+}
+
+.top-rated-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.sml {
+  padding: 10px;
+}
+
+.similar-movie {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

@@ -80,7 +80,7 @@ export function Home() {
     //shows the top rated movies 
       const topRatedList = topRated.slice(0,4).map(( item, index) => {
           return (
-              <div className='col-md-3' key={index}>
+              <div className='tr' key={index}>
                   <div className='card'>
                       <Link to={`/movie/${item.id}`}>
                           <img className='img-fluid' src={item.poster} alt={item.title} />
@@ -110,7 +110,7 @@ export function Home() {
                             {movies}
                     </RBCarousel>
                 </div>
-                <div className='genre-row'>
+                <div className='row mt-4'>
                     <div className=''>
                         <ul className='list'>
                             {genreList}
@@ -126,7 +126,7 @@ export function Home() {
                     </p>
                 </div>
             </div>
-            <div className='row mt-3'>{topRatedList}</div>
+            <div className='top-rated-list'>{topRatedList}</div>
         </div>
     </div>
     )
