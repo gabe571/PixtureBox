@@ -64,7 +64,7 @@ export function Home() {
 //shows the movies under that genre after you click on a specific genre
     const movieList = movieByGenre.map((item, index) => {
         return (
-            <div className='col-md-3 col-sm-6' key={index}>
+            <div className='mbg' key={index}>
                 <div className='card>'>
                 <Link to={`/movie/${item.id}`}>
                     <img className='img-fluid' src={item.poster} alt={item.title}></img>
@@ -110,18 +110,18 @@ export function Home() {
                             {movies}
                     </RBCarousel>
                 </div>
-                <div className='row mt-4'>
-                    <div className='col'>
+                <div className='genre-row'>
+                    <div className=''>
                         <ul className='list'>
                             {genreList}
                         </ul>
                     </div>
                 </div>
-            <div className='row mt-3'>{movieList}</div> 
+            <div className='movie-list'>{movieList}</div> 
             </div>
-            <div className='row mt-3'>
-                <div className='col'>
-                    <p className='font-weight-bold' style={{ color: 'WHITE' }}>
+            <div className=''>
+                <div className=''>
+                    <p className='trm'>
                         TOP RATED MOVIES
                     </p>
                 </div>

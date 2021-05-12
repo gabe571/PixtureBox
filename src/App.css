@@ -96,5 +96,22 @@
   font-weight: bold;
 }
 
+.trm {
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
 
+.genre-row {
+  margin-top: 5px;
+}
 
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.mbg {
+  padding: 10px;
+}
