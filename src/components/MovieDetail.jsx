@@ -145,39 +145,40 @@ console.log(detail)
             <h1> OVERVIEW </h1>
             <p className='mdp'>{detail.overview}</p>
             </div>
-               <div className='mdc'>
-                 <h1> RATING </h1>
-                 <div className='text-center'>
+               <div className='wrapper'>
+               <div className='box3'>
+                 <h1> VIEWER RATING </h1>
                     <ReactStars
                     count={detail.vote_average}
                     size={20}
                     color={`#f4c10f`}
                     ></ReactStars>
             </div>
-                <div className='mdc'>
+                <div className='box1'>
                     <div className='mdh'>
                     <h1> RELEASE DATE </h1>
                     <p className='mdp'>{detail.release_date}</p>
                 </div>
             </div>
-            <div className='mdc'>
+            <div className='box2'>
                     <div className='mdh'>
                     <h1> RUN TIME </h1>
                     <p className='mdp'>{detail.runtime} MINS</p>
                 </div>
             </div>
-            <div className='mdc'>
+            <div className='box4'>
                     <div className='mdh'>
                     <h1> BUDGET </h1>
                     <p className='mdp'>{detail.budget}</p>
                 </div>
             </div>
-            <div className='mdc'>
+            <div className='box5'>
                     <div className='mdh'>
                     <h1> HOMEPAGE </h1>
                     <a className='mdp'href={detail.homepage} target="_blank">{detail.homepage}</a>
                 </div>
             </div>
+          </div>
             <div className="row mt-3">
         <div className="col">
           <h1 className='cast'>CAST</h1>
@@ -193,7 +194,6 @@ console.log(detail)
         </div>
       </div>
       <div className="similar-movie">{similarMovieList}</div>
-        </div>
        </div>
      </div>
     );
