@@ -7,7 +7,7 @@ const topratedUrl = `${url}/movie/top_rated`;
 const movieUrl = `${url}/movie`;
 const genreUrl = `${url}/genre/movie/list`;
 const moviesUrl = `${url}/discover/movie`;
-const personUrl = `${url}/trending/person/week`;
+
  
 //fetching now playing movies, shown on carousel at top of page
 export const fetchMovies = async () => {
@@ -75,25 +75,6 @@ export const fetchMovieByGenre = async (genre_id) => {
             rating: movie['vote_average'],
         }))
 
-        return modifiedData;
-    } catch (error) { }
-}
-
-//fetches person, known for..
-export const fetchPersons = async () => {
-    try {
-        const { data } = await axios.get(personUrl, {
-            params: {
-                api_key: apiKey
-            }
-        })
-        const modifiedData = data['results'].map((person) => ({
-            id: person['id'],
-            popularity: person['popularity'],
-            name: person['name'],
-            profileImg: 'https://image.tmdb.org/t/p/w200' + person['profile_path'],
-            known: person['known_for_department']
-        }))
         return modifiedData;
     } catch (error) { }
 }

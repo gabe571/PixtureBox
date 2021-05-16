@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import RBCarousel from 'react-bootstrap-carousel';
-import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchPersons, fetchTopratedMovie } from "../service/Axios";
+import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchTopratedMovie } from "../service/Axios";
 import { Link  } from 'react-router-dom';
 import Navbar from './Navbar'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
@@ -21,7 +21,6 @@ export function Home() {
             setNowPlaying(await fetchMovies());
             setGenres(await fetchGenre());
             setMovieByGenre(await fetchMovieByGenre());
-            setPersons(await fetchPersons());
             setTopRated(await fetchTopratedMovie()); 
         };
         fetchAPI();
