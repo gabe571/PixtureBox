@@ -10,6 +10,8 @@
     font-size: 1.6rem;
     line-height: 1.6rem;
     text-decoration: none;
+    font-size: 40px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   .Nav_link:visited {
     color: tomato;
@@ -53,6 +55,7 @@
     float: right;
     list-style-type:none;
     display: block;
+    margin-right: 1em;
   }
   
   .fa-arrow-alt-circle-right {
