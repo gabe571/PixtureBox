@@ -7,6 +7,7 @@ const topratedUrl = `${url}/movie/top_rated`;
 const movieUrl = `${url}/movie`;
 const genreUrl = `${url}/genre/movie/list`;
 const moviesUrl = `${url}/discover/movie`;
+const searchUrl = `${url}/search/movie`
 
  
 //fetching now playing movies, shown on carousel at top of page
@@ -16,7 +17,7 @@ export const fetchMovies = async () => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 1
+                page: 2
             }
         })
 //returns posters, showing the title, poster, overview, rating
@@ -58,7 +59,7 @@ export const fetchMovieByGenre = async (genre_id) => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                maximum: 50,
+                page: 1,
                 with_genres: genre_id
             }
         })
@@ -77,6 +78,7 @@ export const fetchMovieByGenre = async (genre_id) => {
         return modifiedData;
     } catch (error) { }
 }
+
 
 //top rated movies returned 
 export const fetchTopratedMovie = async () => {

@@ -24,6 +24,36 @@
     text-decoration: none;
   }
   
+  .Nav_link {
+    float: left;
+    list-style-type:none;
+    display: block;
+  }
+
+  .Nav_link_two:link {
+    color: tomato;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    text-decoration: none;
+  }
+  .Nav_link_two:visited {
+    color: tomato;
+    text-decoration: none;
+  }
+  .Nav_link_two:hover {
+    color: tomato;
+    text-decoration: none;
+  }
+  .Nav_link_two:active {
+    color: tomato;
+    text-decoration: none;
+  }
+  
+  .Nav_link_two {
+    float: right;
+    list-style-type:none;
+    display: block;
+  }
   
   .fa-arrow-alt-circle-right {
     color: orange;
