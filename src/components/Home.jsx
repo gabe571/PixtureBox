@@ -11,10 +11,8 @@ export function Home() {
     const [nowPlaying, setNowPlaying] = useState([]);
     const [genres, setGenres] = useState([]);
     const [movieByGenre, setMovieByGenre] = useState([]);
-    const [persons, setPersons] = useState([]);
     const [topRated, setTopRated] = useState([]);
 //useEffect axios calls for nowPlaying, Genres, MovieByGenre, Person, TopRated
-
 
     useEffect(() => {
         const fetchAPI = async () => {
@@ -48,6 +46,7 @@ export function Home() {
             </div>
         );
     });
+
 //showing all genres under carousel, these genres are clickable which bring you to the other titles that are associated with that genre
     const genreList = genres.map((item, index) => {
         return(
@@ -60,6 +59,7 @@ export function Home() {
             </li>
         );
     });
+    
 //shows the movies under that genre after you click on a specific genre
     const movieList = movieByGenre.map((item, index) => {
         return (
@@ -75,7 +75,7 @@ export function Home() {
         </div>
         );
     });
-
+    console.log(movieByGenre)
     //shows the top rated movies 
       const topRatedList = topRated.slice(0,4).map(( item, index) => {
           return (
@@ -91,7 +91,6 @@ export function Home() {
               </div>
           )
       })
-
 
     return (
         <div>

@@ -16,7 +16,7 @@ export const fetchMovies = async () => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 2
+                page: 1
             }
         })
 //returns posters, showing the title, poster, overview, rating
@@ -24,7 +24,6 @@ export const fetchMovies = async () => {
         const modifiedData = data['results'].map((movie) => ({
             id: movie['id'],
             backPoster: posterUrl + movie['backdrop_path'],
-            popularity: movie['popularith'],
             title: movie['title'],
             poster: posterUrl + movie['poster_path'],
             overview: movie['overview'],
@@ -41,8 +40,7 @@ export const fetchGenre = async () => {
         const { data } = await axios.get(genreUrl, {
             params: {
                 api_key: apiKey,
-                language: 'en_US',
-                page: 1
+                language: 'en_US'
             }
         })
         const modifiedData = data['genres'].map((genre) => ({
@@ -60,7 +58,7 @@ export const fetchMovieByGenre = async (genre_id) => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 1,
+                maximum: 50,
                 with_genres: genre_id
             }
         })
@@ -68,11 +66,12 @@ export const fetchMovieByGenre = async (genre_id) => {
         const modifiedData = data['results'].map((movie) => ({
             id: movie['id'],
             backPoster: posterUrl + movie['backdrop_path'],
-            popularity: movie['popularith'],
+            popularity: movie['popularity'],
             title: movie['title'],
             poster: posterUrl + movie['poster_path'],
             overview: movie['overview'],
             rating: movie['vote_average'],
+            production_companies: movie ['production_companies']
         }))
 
         return modifiedData;
@@ -86,7 +85,7 @@ export const fetchTopratedMovie = async () => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 1
+                page: 2
             }
         })
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
