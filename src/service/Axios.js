@@ -9,7 +9,28 @@ const genreUrl = `${url}/genre/movie/list`;
 const moviesUrl = `${url}/discover/movie`;
 const searchUrl = `${url}/search/movie`
 
- 
+export const fetchAllMovies = async () => {
+    try {
+        const { data } = await axios.get(searchUrl, {
+            params: {
+                api_key: apiKey,
+                language: 'en_US'
+            }
+        })
+        const posterUrl = 'https://image.tmdb.org/t/p/original/';
+        const modifiedData = data['results'].map((movie) => ({
+            id: movie['id'],
+            backPoster: posterUrl + movie['backdrop_path'],
+            title: movie['title'],
+            poster: posterUrl + movie['poster_path'],
+            overview: movie['overview'],
+            rating: movie['vote_average'],
+        }))
+
+        return modifiedData;
+    } catch (error) { }
+}
+
 //fetching now playing movies, shown on carousel at top of page
 export const fetchMovies = async () => {
     try {
@@ -20,6 +41,7 @@ export const fetchMovies = async () => {
                 page: 1
             }
         })
+        
 //returns posters, showing the title, poster, overview, rating
         const posterUrl = 'https://image.tmdb.org/t/p/original/';
         const modifiedData = data['results'].map((movie) => ({

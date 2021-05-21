@@ -14,6 +14,10 @@ export function Home() {
     const [genres, setGenres] = useState([]);
     const [movieByGenre, setMovieByGenre] = useState([]);
     const [topRated, setTopRated] = useState([]);
+    const [searchMovies, setSearchMovies] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+
+   
 //useEffect axios calls for nowPlaying, Genres, MovieByGenre, Person, TopRated
 
     useEffect(() => {
