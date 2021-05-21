@@ -10,7 +10,7 @@
     font-size: 1.6rem;
     line-height: 1.6rem;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 35px;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   .Nav_link:visited {
@@ -27,9 +27,9 @@
   }
   
   .Nav_link {
-    float: left;
     list-style-type:none;
     display: block;
+    margin-top: 2%;
   }
 
   .Nav_link_two:link {
@@ -220,4 +220,9 @@
 
 .movie-rating {
   margin-top: 2%;
+}
+
+input[type=text] {
+  border:0;
+  text-decoration: none;
 }

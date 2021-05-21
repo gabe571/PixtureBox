@@ -17,7 +17,7 @@ export const fetchMovies = async () => {
             params: {
                 api_key: apiKey,
                 language: 'en_US',
-                page: 2
+                page: 1
             }
         })
 //returns posters, showing the title, poster, overview, rating
