@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import RBCarousel from 'react-bootstrap-carousel';
-import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchTopratedMovie } from "../service/Axios";
+import { fetchMovies, searchMovies, fetchGenre, fetchMovieByGenre, fetchTopratedMovie } from "../service/Axios";
 import { Link  } from 'react-router-dom';
 import Navbar from './Navbar'
 import Search from './Search'
@@ -25,14 +25,16 @@ export function Home() {
             setNowPlaying(await fetchMovies());
             setGenres(await fetchGenre());
             setMovieByGenre(await fetchMovieByGenre());
-            setTopRated(await fetchTopratedMovie()); 
+            setTopRated(await fetchTopratedMovie());
         };
         fetchAPI();
     },[]);
+
 //fucntion handle for onClick to retrieve genre when clicked
     const handleGenre = async (genre_id) => {
         setMovieByGenre(await fetchMovieByGenre(genre_id));
     }
+
 //carousel sliding through the most recent movies
     const movies = nowPlaying.slice(0, 6).map((item, index) => {
         return (
@@ -81,7 +83,7 @@ export function Home() {
         </div>
         );
     });
-    console.log(movieByGenre)
+
     //shows the top rated movies 
       const topRatedList = topRated.slice(0,4).map(( item, index) => {
           return (
