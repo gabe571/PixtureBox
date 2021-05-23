@@ -226,3 +226,7 @@ input[type=text] {
   border:0;
   text-decoration: none;
 }
+
+.card-list {
+  background-color: black;
+}
