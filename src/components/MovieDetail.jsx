@@ -101,8 +101,8 @@ console.log(detail)
           </Link>
         </div>
         <div className="mt-3">
-          <p style={{ fontWeight: "bolder" }}>{item.title}</p>
-          <p>Rated: {item.rating}</p>
+          {/* <p style={{ fontWeight: "bolder" }}>{item.title}</p> */}
+          {/* <p>Rated: {item.rating}</p> */}
         </div>
       </div>
     );
@@ -146,7 +146,7 @@ console.log(detail)
             </div>
                <div className='wrapper'>
                <div className='box3'>
-                 <h1> VIEWER RATING </h1>
+                 <h1> RATING </h1>
                     <ReactStars
                     count={detail.vote_average}
                     size={20}

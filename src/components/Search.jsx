@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link  } from 'react-router-dom';
 
 export default function SearchMovies(){
 
@@ -26,26 +27,25 @@ export default function SearchMovies(){
 
     return (
     <>
+    <br></br>
         <form className="form" onSubmit={searchMovies}>
-            <label className="label" htmlFor="query">Movie Name</label>
+            <label className="label" htmlFor="query"></label>
             <input className="input" type="text" name="query"
                 placeholder="i.e. Jurassic Park"
                 value={query} onChange={(e) => setQuery(e.target.value)}
                 />
             <button className="button" type="submit">Search</button>
         </form>
-        <div className="card-list">
+        <div className="movie-list">
                 {movies.filter(movie => movie.poster_path).map(movie => (
                     <div className="mbg" key={movie.id}>
-                        <img className="card" style={{ height: '20%', width: '10%'}}
+                        <Link to={`/movie/${movie.id}`}>
+                        <img className="card" style={{ height: '100%', width: '80%'}}
                             src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
                             alt={movie.title + ' poster'}
                             />
-     <div className="card--content"  style={{ textAlign:'center', fontSize: 50, fontWeight: 'bold', color: 'tomato' }}>
-                        {/* <h3 className="card--title">{movie.title}</h3>
-                        <p><h5>RELEASE DATE: {movie.release_date}</h5></p>
-                        <p><h5>RATING: {movie.vote_average}</h5></p>
-                        <p className="card--desc">{movie.overview}</p> */}
+                        </Link>
+     <div className=""  style={{ textAlign:'center', fontSize: 50, fontWeight: 'bold' }}>
                         </div>
 
                     </div>
