@@ -223,10 +223,23 @@
 }
 
 input[type=text] {
-  border:0;
+  border-width:0px;
+  border:none;
   text-decoration: none;
+  background-color: transparent;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  -webkit-appearance: none
 }
 
 .card-list {
   background-color: black;
+}
+
+.s-button {
+  background-color: transparent;
+  color:tomato;
+  outline: none;
+  border: none;
 }

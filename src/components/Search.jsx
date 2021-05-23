@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link  } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
 
 export default function SearchMovies(){
 
@@ -29,12 +30,13 @@ export default function SearchMovies(){
     <>
     <br></br>
         <form className="form" onSubmit={searchMovies}>
+        <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
             <label className="label" htmlFor="query"></label>
             <input className="input" type="text" name="query"
                 placeholder="i.e. Jurassic Park"
                 value={query} onChange={(e) => setQuery(e.target.value)}
                 />
-            <button className="button" type="submit">Search</button>
+            {/* <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button> */}
         </form>
         <div className="movie-list">
                 {movies.filter(movie => movie.poster_path).map(movie => (
