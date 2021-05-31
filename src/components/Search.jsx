@@ -36,14 +36,14 @@ export default function SearchMovies(){
         <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
             <label className="label" htmlFor="query"></label>
             <input className="input" type="text" name="query"
-                placeholder="i.e. King Kong"
+                placeholder="Search Movie Here..."
                 value={query} onChange={(e) => setQuery(e.target.value)}
                 />
             {/* <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button> */}
         </form>
         <div className="movie-list">
                 {movies.filter(movie => movie.poster_path).map(movie => (
-                    <div className="mbg" key={movie.id}>
+                    <div className="img-fluid" key={movie.id}>
                         <Link to={`/movie/${movie.id}`}>
                         <img className="card" style={{ height: '400px', width: '250px'}}
                             src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
