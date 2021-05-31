@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import { Link  } from 'react-router-dom';
-import { FaUserCircle } from 'react-icons/fa';
+import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
+
 
 export default function SearchMovies(){
+
 
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
 
     const searchMovies = async (e) => {
         e.preventDefault();
+        setQuery('');
         console.log("submitting");
         
  
         
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${query}&page=1&include_adult=false`;
+        const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=63cad23fc5d27c914717d084f3379dd9&language=en-US&query=${query}&page=1&include_adult=false`;
         
         try {
-            const res = await fetch(url);
+            const res = await fetch(queryUrl);
             const data  = await res.json();
             console.log(data.results);
             setMovies(data.results)
@@ -33,7 +36,7 @@ export default function SearchMovies(){
         <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
             <label className="label" htmlFor="query"></label>
             <input className="input" type="text" name="query"
-                placeholder="i.e. Jurassic Park"
+                placeholder="i.e. King Kong"
                 value={query} onChange={(e) => setQuery(e.target.value)}
                 />
             {/* <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button> */}
@@ -42,7 +45,7 @@ export default function SearchMovies(){
                 {movies.filter(movie => movie.poster_path).map(movie => (
                     <div className="mbg" key={movie.id}>
                         <Link to={`/movie/${movie.id}`}>
-                        <img className="card" style={{ height: '100%', width: '80%'}}
+                        <img className="card" style={{ height: '400px', width: '250px'}}
                             src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
                             alt={movie.title + ' poster'}
                             />
@@ -57,13 +60,3 @@ export default function SearchMovies(){
     )
 }
 
-{/* <div className='mbg' key={index}>
-<div className=''>
-<Link to={`/movie/${item.id}`}>
-    <img className='img-fluid' src={item.poster} alt={item.title}></img>
-</Link>
-<div className='movie-rating'>
-<h5> Rated: {item.rating}  </h5>
-</div>
-</div>    
-</div> */}

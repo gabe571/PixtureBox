@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import RBCarousel from 'react-bootstrap-carousel';
-import { fetchMovies, searchMovies, fetchGenre, fetchMovieByGenre, fetchTopratedMovie } from "../service/Axios";
+import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchTopratedMovie } from "../service/Axios";
 import { Link  } from 'react-router-dom';
 import Navbar from './Navbar'
 import Search from './Search'

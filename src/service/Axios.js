@@ -7,26 +7,35 @@ const topratedUrl = `${url}/movie/top_rated`;
 const movieUrl = `${url}/movie`;
 const genreUrl = `${url}/genre/movie/list`;
 const moviesUrl = `${url}/discover/movie`;
-const searchUrl = `${url}/search/movie`
+const queryUrl = `${url}/search/movie`
 
-export default function SearchMovies(){
+//fetching now playing movies, shown on carousel at top of page
+export const searchMovies = async () => {
+    try {
+        const { data } = await axios.get(queryUrl, {
+            params: {
+                api_key: apiKey,
+                language: 'en_US',
+                page: 1
+            }
+        })
+        
+//returns posters, showing the title, poster, overview, rating
+        const posterUrl = 'https://image.tmdb.org/t/p/original/';
+        const modifiedData = data['results'].map((movie) => ({
+            id: movie['id'],
+            backPoster: posterUrl + movie['backdrop_path'],
+            title: movie['title'],
+            poster: posterUrl + movie['poster_path'],
+            overview: movie['overview'],
+            rating: movie['vote_average'],
+        }))
 
-    const searchMovies = async (e) => {
-        e.preventDefault();
-
-        const query = "Jurassic Park";
-
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${query}&page=1&include_adult=false`;
-
-        try {
-            const res = await fetch(url);
-            const data  = await res.json();
-            console.log(data);
-        }catch(err){
-            console.error(err);
-        }
-    }
+        return modifiedData;
+    } catch (error) { }
 }
+
+     
 //fetching now playing movies, shown on carousel at top of page
 export const fetchMovies = async () => {
     try {
