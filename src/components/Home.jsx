@@ -135,7 +135,7 @@ export function Home() {
             </div>
             <div className='top-rated-list'>{topRatedList}</div>
         </div>
-        <hr className="mt-5" style={{ borderTop: "2px solid #5a606b" }}></hr>
+        <hr className='hr'></hr>
         <AboutCreator />
     </div>
     )
