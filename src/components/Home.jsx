@@ -2,8 +2,9 @@ import React, { useState, useEffect }  from 'react';
 import RBCarousel from 'react-bootstrap-carousel';
 import { fetchMovies, fetchGenre, fetchMovieByGenre, fetchTopratedMovie } from "../service/Axios";
 import { Link  } from 'react-router-dom';
-import Navbar from './Navbar'
-import Search from './Search'
+import Navbar from './Navbar';
+import Search from './Search';
+import AboutCreator from './AboutCreator';
 
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import '../App.css'
@@ -134,6 +135,8 @@ export function Home() {
             </div>
             <div className='top-rated-list'>{topRatedList}</div>
         </div>
+        <hr className="mt-5" style={{ borderTop: "2px solid #5a606b" }}></hr>
+        <AboutCreator />
     </div>
     )
 }
