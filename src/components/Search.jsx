@@ -15,7 +15,7 @@ export default function SearchMovies(){
         console.log("submitting");
         
  
-        
+      
         const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=63cad23fc5d27c914717d084f3379dd9&language=en-US&query=${query}&page=1&include_adult=false`;
         
         try {
@@ -43,16 +43,13 @@ export default function SearchMovies(){
         </form>
         <div className="movie-list">
                 {movies.filter(movie => movie.poster_path).map(movie => (
-                    <div className="img-fluid" key={movie.id}>
+                    <div className="" key={movie.id}>
                         <Link to={`/movie/${movie.id}`}>
-                        <img className="card" style={{ height: '400px', width: '250px'}}
+                        <img className="search-img"
                             src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
                             alt={movie.title + ' poster'}
                             />
                         </Link>
-     <div className=""  style={{ textAlign:'center', fontSize: 50, fontWeight: 'bold' }}>
-                        </div>
-
                     </div>
                 ))}
             </div>    

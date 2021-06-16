@@ -5,7 +5,6 @@ import { Link  } from 'react-router-dom';
 import Navbar from './Navbar';
 import Search from './Search';
 import AboutCreator from './AboutCreator';
-
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import '../App.css'
 
@@ -74,7 +73,7 @@ export function Home() {
             <div className='mbg' key={index}>
                 <div className=''>
                 <Link to={`/movie/${item.id}`}>
-                    <img className='img-fluid' src={item.poster} alt={item.title}></img>
+                    <img className='genre-img' src={item.poster} alt={item.title}></img>
                 </Link>
                 <div className='movie-rating'>
                 {/* <h5> Rated: {item.rating}  </h5> */}

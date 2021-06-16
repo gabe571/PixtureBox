@@ -251,3 +251,19 @@ input[type=text] {
 .hr {
   border-top: 1px solid #5a606b;
 }
+
+.search-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100%;
+  width: 80%;
+  padding: 1em;
+}
+
+.genre-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100%;
+  width: 100%;
+}
+/* style={{ height: '400px', width: '250px'}} */
