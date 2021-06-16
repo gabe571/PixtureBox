@@ -34,29 +34,19 @@ console.log(detail)
     const MoviePlayerModal = (props) => {
         const youtubeUrl = 'https://www.youtube.com/watch?v=';
         return (
-            <Modal
+            <Modal 
             {...props}
             size='lg'
-            aria-labelledby='contained-modal-title-vcenter'
             centered
-            >
-            <Modal.Header closeButton>
-                <Modal.Title
-                id='container-modal-title-vcenter'
-                style={{ color: 'black', fontWeight: 'bolder' }}
-                >
-                {detail.title}
-                </Modal.Title>
-            </Modal.Header> 
-            <Modal.Body style={{backgroundColor: 'black' }}>
-                <ReactPlayer
-                className='container-fluid'
+            >    
+                <ReactPlayer 
+                className='react-player'
                 url={youtubeUrl + video.key} 
                 playing
-                width='100%'
+                width='125%'
+                height='100%'
                 >
                 </ReactPlayer>
-            </Modal.Body>
             </Modal>
         );
     };
@@ -119,7 +109,7 @@ console.log(detail)
         }}
         >
         </MoviePlayerModal>
-            <div className="col text-center" style={{ width: "100%" }}>
+            <div className="col text-center" style={{ width: "100%", height: '100%' }}>
              <img
             className="img-fluid"
             src={`http://image.tmdb.org/t/p/original/${detail.backdrop_path}`}

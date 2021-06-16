@@ -266,4 +266,10 @@ input[type=text] {
   height: 100%;
   width: 100%;
 }
+
+.movie-modal {
+  height: max-content;
+  width: max-content;
+}
+
 /* style={{ height: '400px', width: '250px'}} */
