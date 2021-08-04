@@ -3,7 +3,7 @@ import { Link  } from 'react-router-dom';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
 
-export default function SearchMovies(){
+export default function Search(){
 
 
     const [query, setQuery] = useState('');

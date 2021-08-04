@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from "react-player";
-import { fetchMovieDetail, fetchMovieVideos, fetchCasts, fetchSimilarMovie } from '../service/Axios'
+import { fetchMovieDetail, fetchMovieByGenre, fetchMovieVideos, fetchCasts, fetchSimilarMovie } from '../service/Axios'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import { Modal } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar'
+import Search from './Search';
 
 
 //accessing movie thats being clicked on Home Page
@@ -101,6 +102,7 @@ console.log(detail)
     return (
     <div>
          <Navbar />
+         <Search />
         <div className='container' style={{ width: '1200px' }}>
         <MoviePlayerModal
         show={isOpen}
@@ -164,7 +166,7 @@ console.log(detail)
             <div className='box5'>
                     <div className='mdh'>
                     <h1> HOMEPAGE </h1>
-                    <a className='mdp'href={detail.homepage} target="_blank">{detail.homepage}</a>
+                    <a className='mdp'href={detail.homepage} target="blank">{detail.homepage}</a>
                 </div>
             </div>
           </div>
