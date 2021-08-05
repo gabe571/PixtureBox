@@ -101,7 +101,6 @@ console.log(detail)
 
     return (
     <div>
-         <Navbar />
          <Search />
         <div className='container' style={{ width: '1200px' }}>
         <MoviePlayerModal

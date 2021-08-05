@@ -101,7 +101,6 @@ export function Home() {
 
     return (
         <div>
-        <Navbar />
         <Search />
         <div className="container">
             <div className='row mt-2'>

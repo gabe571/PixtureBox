@@ -3,7 +3,7 @@ import { Link  } from 'react-router-dom';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 
 
-export default function Search(){
+export default function SearchMovies(){
 
 
     const [query, setQuery] = useState('');
@@ -36,7 +36,7 @@ export default function Search(){
         <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
             <label className="label" htmlFor="query"></label>
             <input className="input" type="text" name="query"
-                placeholder="Search Movie Here..."
+                placeholder=""
                 value={query} onChange={(e) => setQuery(e.target.value)}
                 />
             {/* <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button> */}
