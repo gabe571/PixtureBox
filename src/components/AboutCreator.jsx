@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react';
+import react from 'react'
 
 export default function AboutCreator() {
 

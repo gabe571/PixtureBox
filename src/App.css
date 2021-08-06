@@ -4,6 +4,7 @@
     background-color: transparent;
     transition: all 0.3s ease-in-out;
   }
+
   
   .Nav_link:link {
     color: tomato;
@@ -57,15 +58,7 @@
     display: block;
     margin-right: 1em;
   }
-  .fa-play-circle:hover {
-    color: white;
-    transition: all 0.3 ease-in-out;
-  }
   
-  .fa-arrow-alt-circle-right:hover {
-    color: white;
-    transition: all 0.3 ease-in-out;
-  }
   .modal-content {
     height: 500px;
   }
@@ -239,9 +232,7 @@ input[type=text] {
 }
 
 .ac {
-
 }
-
 .hr {
   border-top: 1px solid #5a606b;
 }
@@ -266,4 +257,3 @@ input[type=text] {
   width: max-content;
 }
 
-/* style={{ height: '400px', width: '250px'}} */

@@ -75,9 +75,6 @@ export function Home() {
                 <Link to={`/movie/${item.id}`}>
                     <img className='genre-img' src={item.poster} alt={item.title}></img>
                 </Link>
-                <div className='movie-rating'>
-                {/* <h5> Rated: {item.rating}  </h5> */}
-                </div>
             </div>    
         </div>
         );
@@ -91,9 +88,6 @@ export function Home() {
                       <Link to={`/movie/${item.id}`}>
                           <img className='img-fluid' src={item.poster} alt={item.title} />
                     </Link>
-                </div>
-                <div className='mt-3'>
-                {/* <p> Rated: {item.rating}  </p> */}
                 </div>
               </div>
           )
