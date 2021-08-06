@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { FaUserCircle } from 'react-icons/fa';
+
 
 export function Navbar() {
 
