@@ -33,10 +33,10 @@ export default function SearchMovies(){
     <>
     <br></br>
         <form className="form" onSubmit={searchMovies}>
-        <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+        <><i class="fa fa-search fa-2x" aria-hidden="true"></i></>
             <label className="label" htmlFor="query"></label>
             <input className="input" type="text" name="query"
-                placeholder=""
+                placeholder="Search Movie Here"
                 value={query} onChange={(e) => setQuery(e.target.value)}
                 />
             {/* <button className="s-button" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button> */}
