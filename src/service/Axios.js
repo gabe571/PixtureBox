@@ -8,6 +8,26 @@ const movieUrl = `${url}/movie`;
 const genreUrl = `${url}/genre/movie/list`;
 const moviesUrl = `${url}/discover/movie`;
 const queryUrl = `${url}/search/movie`
+const getDetailsUrl = `${url}/person`
+
+//fetching cast details
+export const fetchSearchPerson = async () => {
+    try {
+        const { data } = await axios.get(getDetailsUrl, {
+            params: {
+                api_key: apiKey,
+                language: 'en_US'
+            }
+        })
+        const modifiedData = data['results'].map((person) => ({
+            id: person['id'],
+            also_known_as: person['also_known_as'],
+            birtday: person['birthday']
+        }))
+
+        return modifiedData;
+    } catch (error) { }
+}
 
 //fetching now playing movies, shown on carousel at top of page
 export const searchMovies = async () => {
@@ -35,7 +55,6 @@ export const searchMovies = async () => {
     } catch (error) { }
 }
 
-     
 //fetching now playing movies, shown on carousel at top of page
 export const fetchMovies = async () => {
     try {

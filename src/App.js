@@ -2,6 +2,7 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import { Home } from './components/Home';
 import { MovieDetail } from './components/MovieDetail';
+import { personDetail } from './components/personDetail'
 import { Navbar } from './components/Navbar';
 
 function App() {

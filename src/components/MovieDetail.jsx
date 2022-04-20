@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from "react-player";
-import { fetchMovieDetail, fetchMovieByGenre, fetchMovieVideos, fetchCasts, fetchSimilarMovie } from '../service/Axios'
+import { fetchMovieDetail, fetchMovieByGenre, fetchMovieVideos, fetchCasts, fetchSimilarMovie, fetchSearchPerson } from '../service/Axios'
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import { Modal } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
@@ -19,7 +19,8 @@ export function MovieDetail({ match }) {
     const [video, setVideo] = useState([]);
     const [casts, setCasts] = useState([]);
     const [similarMovie, setSimliarMovie] = useState([]);
-console.log(match.params)
+    const [persons, setPersons] = useState([]);
+
 //useEffect calls for detail, video, casts and similar movie
     useEffect(() => {
         const fetchAPI = async () => {
@@ -27,11 +28,14 @@ console.log(match.params)
             setVideo(await fetchMovieVideos(params.id));
             setCasts(await fetchCasts(params.id));
             setSimliarMovie(await fetchSimilarMovie(params.id))
+            setPersons(await fetchSearchPerson(params.id))
         };
             fetchAPI();
         }, [params.id]);
         genres = detail.genres;
-console.log(detail)
+
+      
+        
     const MoviePlayerModal = (props) => {
         const youtubeUrl = 'https://www.youtube.com/watch?v=';
         return (
@@ -74,10 +78,17 @@ console.log(detail)
           alt={c.name}
         ></img>
         <p className='cast-name'>{c.name}</p>
-        <p className='cast-character'
-        >
+        <p className='cast-character'>
           {c.character}
         </p>
+      </div>
+    );
+  });
+
+  const castPerson = casts.map((p, i) => {
+    return (
+      <div key={i}>
+        <h1>{p.birthday}</h1>
       </div>
     );
   });
@@ -98,7 +109,6 @@ console.log(detail)
       </div>
     );
   });
-
     return (
     <div>
          <Search />
@@ -175,7 +185,6 @@ console.log(detail)
         </div>
       </div>
       <div className="cast-row">{castList}</div>
-
       <div>
         <div>
           <p className="similar-titles">
@@ -184,6 +193,9 @@ console.log(detail)
         </div>
       </div>
       <div className="similar-movie">{similarMovieList}</div>
+       </div>
+       <div>
+       <div> Cast Person {castPerson} </div>
        </div>
      </div>
     );
