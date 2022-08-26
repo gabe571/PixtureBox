@@ -2,8 +2,7 @@
 
 PixtureBox is a react app utilizing the Movie Database API
 
-Link -> 
-https://developers.themoviedb.org/3/getting-started/introduction
+The Movie Database
 
 This application also uses ReactPlayer to show movie trailers from youtube.
 
