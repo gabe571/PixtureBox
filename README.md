@@ -19,5 +19,10 @@ Able to view movie titles by genre
 
 
 
-Viewing title will give you access to the movie trailer, overiew, budget, cast etc...
+Viewing title will give you access to the movie trailer, overiew, budget, cast and more!
 
+
+
+
+![Screen Shot 2022-08-28 at 11 24 33 AM](https://user-images.githubusercontent.com/21294385/187089056-8b768c01-f083-4304-a042-4ec6377c851e.png)
+![Screen Shot 2022-08-28 at 11 24 45 AM](https://user-images.githubusercontent.com/21294385/187089057-b472cdd3-db31-4029-9144-4ff6a9e01acf.png)
