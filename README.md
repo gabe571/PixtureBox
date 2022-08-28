@@ -6,11 +6,11 @@ This application also uses [ReactPlayer](https://www.npmjs.com/package/react-pla
 
 # Get Started
 
-**Simply clone down the repo
+Simply clone down the repo
 
-**run: npm install **
+run: npm install 
 
-**Start browsing movie titles****
+Start browsing movie titles
 
 # Features
 
